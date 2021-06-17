@@ -1,0 +1,31 @@
+
+h1{
+    text-align: center;
+    margin: 50px;
+    color: rgb(67, 67, 185);
+}
+
+h2{
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 100px;
+}
+
+
+.container{
+    background-color: #fff;
+}
+
+
+.circle{
+    background-color: burlywood;
+    height: 200px;
+    width: 200px;
+    border: 1px solid blue;
+    border-radius: 50%;
+}
+
+.answer{
+    text-align: center;
+    margin-top: 90px;
+}
