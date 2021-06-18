@@ -7,10 +7,10 @@ document.getElementById('import').onclick=function(){
 
     fr.onload=function(e){
         const result=JSON.parse(e.target.result);
-        findMean(result);
-        findMedian(result);
-        findMode(result);
-        findStandardDeviation(result);
+        document.getElementById('mean').textContent = findMean(result);
+        document.getElementById('median').textContent = findMedian(result);
+        document.getElementById('mode').textContent = findMode(result);
+        document.getElementById('standardDeviation').textContent = findStandardDeviation(result);
     } 
 }
 
@@ -22,7 +22,6 @@ function findMean(inputData){
 
     const total= arr.reduce((acc,val) => acc+val);
     const mean = total/length;
-    document.getElementById('mean').textContent = mean;
     return mean;
 }
 
@@ -34,7 +33,7 @@ function findMedian(inputData){
     let median=0;
     let sorted=arr.sort();
     length%2===0 ? median=(sorted[length/2] + sorted[(length/2)-1])/2 : median=sorted[(length-1)/2];
-    document.getElementById('median').textContent = median;
+    return median;
 }
 
 //IMPLEMETING THE MODE FUNCTIONALITY
@@ -62,7 +61,8 @@ function findMode(inputData){
      }
      }
      count>prev_count ? mode=value : mode=prev_val;
-     document.getElementById('mode').textContent = mode;
+
+     return mode;
 }
 
 //IMPLEMETING THE S.D FUNCTIONALITY
@@ -80,7 +80,6 @@ function findStandardDeviation(inputData){
         const mean_of_squared=sum/length;
         let mean=findMean(inputData);
         const StandardDeviation= (mean_of_squared-(mean)**2)**(1/2);
-        document.getElementById('standardDeviation').textContent = StandardDeviation;
-
+        return StandardDeviation;
 
 }
