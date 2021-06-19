@@ -7,10 +7,7 @@ document.getElementById('import').onclick=function(){
 
     fr.onload=function(e){
         const result=JSON.parse(e.target.result);
-        document.getElementById('mean').textContent = findMean(result);
-        document.getElementById('median').textContent = findMedian(result);
-        document.getElementById('mode').textContent = findMode(result);
-        document.getElementById('standardDeviation').textContent = findStandardDeviation(result);
+        display(result);
     } 
 }
 
@@ -40,7 +37,7 @@ function findMedian(inputData){
 function findMode(inputData){
     var arr= inputData.data;
     var length=arr.length;
-
+    
     let mode=0;
     let count=1;
     let value=0, prev_val=0;
@@ -83,3 +80,20 @@ function findStandardDeviation(inputData){
         return StandardDeviation;
 
 }
+
+document.getElementById('fetch').onclick=function(){
+    var staticURL=document.getElementById('fetch-url').value;
+        $.getJSON(staticURL,function(data){
+            display(data);
+        });
+}
+
+
+function display(inputData){
+    document.getElementById('mean').textContent = findMean(inputData);
+    document.getElementById('median').textContent = findMedian(inputData);
+    document.getElementById('mode').textContent = findMode(inputData);
+    document.getElementById('standardDeviation').textContent = findStandardDeviation(inputData);
+}
+
+//'https://api.jsonbin.io/b/60cd063f8ea8ec25bd107032'
