@@ -1,4 +1,5 @@
 
+//Fetch through file upload
 document.getElementById('import').onclick=function(){
 
     var files=document.getElementById('selectFiles').files;
@@ -10,7 +11,13 @@ document.getElementById('import').onclick=function(){
         display(result);
     } 
 }
-
+// Fetch through URL
+document.getElementById('fetch').onclick=function(){
+    var staticURL=document.getElementById('fetch-url').value;
+        $.getJSON(staticURL,function(data){
+            display(data);
+        });
+}
 
 // IMPLEMENTING MEAN FUNCTIONALITY
 function findMean(inputData){
@@ -37,7 +44,7 @@ function findMedian(inputData){
 function findMode(inputData){
     var arr= inputData.data;
     var length=arr.length;
-    
+
     let mode=0;
     let count=1;
     let value=0, prev_val=0;
@@ -81,14 +88,7 @@ function findStandardDeviation(inputData){
 
 }
 
-document.getElementById('fetch').onclick=function(){
-    var staticURL=document.getElementById('fetch-url').value;
-        $.getJSON(staticURL,function(data){
-            display(data);
-        });
-}
-
-
+// Display functoin
 function display(inputData){
     document.getElementById('mean').textContent = findMean(inputData);
     document.getElementById('median').textContent = findMedian(inputData);

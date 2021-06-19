@@ -2,8 +2,11 @@
 <html lang="en">
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <title>STATS GURU</title>
     </head>
 
@@ -15,44 +18,44 @@
         <div class="container">
             <div class="row">
         
-              <div class="col">
+              <div class="col-lg-3 col-md-6">
                   <div class="circle">
                       <div class="answer" id="mean">
                         Answer
                       </div> 
                   </div>
 
-                <h2>Mean</h2>
+                  <h2>Mean</h2>
                 </div>
 
-              <div class="col">
+              <div class="col-lg-3 col-md-6">
                 <div class="circle">
                     <div class="answer" id="median">
                       Answer
                     </div> 
                 </div>
 
-              <h2>Median</h2>
+                <h2>Median</h2>
               </div>
 
-              <div class="col">
+              <div class="col-lg-3 col-md-6">
                 <div class="circle">
                     <div class="answer" id="mode">
                       Answer
                     </div> 
                 </div>
 
-              <h2>Mode</h2>
+                <h2>Mode</h2>
               </div>
 
-              <div class="col">
+              <div class="col-lg-3 col-md-6">
                 <div class="circle">
                     <div class="answer" id="standardDeviation">
                       Answer
                     </div> 
                 </div>
 
-              <h2>Standard Deviation</h2>
+                <h2>Standard Deviation</h2>
               </div>
 
             </div>
@@ -63,14 +66,16 @@
           <div class="container">
 
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
+                    <label class="btn"> Enter file
                     <input type="file" id="selectFiles" value="Import"> 
-                    <button id="import">Import</button>
+                    </label>
+                    <button id="import" class="btn" >Import</button>
                 </div>
 
-                <div class="col">
-                    <input type="url">
-                    <input type="submit" value="Fetch"> 
+                <div class="col-md-6">
+                    <input type="url" id="fetch-url">
+                    <button id="fetch" class="btn" >Fetch</button>
                 </div>
             <div>
           </div>
