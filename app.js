@@ -36,7 +36,17 @@ function findMedian(inputData){
 
     let median=0;
     let sorted=arr.sort();
-    length%2===0 ? median=(sorted[length/2] + sorted[(length/2)-1])/2 : median=sorted[(length-1)/2];
+
+    // For even number of values, median is the avg. of the middle two numbers
+    // For odd, median is the middle value exactly 
+    if(length%2===0){
+        let p=sorted[length/2];
+        let q=sorted[(length/2)-1];
+        median=(p+q)/2
+    }
+    else{
+        median=sorted[(length-1)/2]
+    }
     return median;
 }
 
@@ -70,6 +80,7 @@ function findMode(inputData){
 }
 
 //IMPLEMETING THE S.D FUNCTIONALITY
+// S.D = (mean of the squared values -s qaure of the mean)^1/2
 function findStandardDeviation(inputData){
     var arr= inputData.data;
     var length=arr.length;
@@ -90,10 +101,10 @@ function findStandardDeviation(inputData){
 
 // Display functoin
 function display(inputData){
-    document.getElementById('mean').textContent = findMean(inputData);
+    document.getElementById('mean').textContent = findMean(inputData).toPrecision(3);
     document.getElementById('median').textContent = findMedian(inputData);
     document.getElementById('mode').textContent = findMode(inputData);
-    document.getElementById('standardDeviation').textContent = findStandardDeviation(inputData);
+    document.getElementById('standardDeviation').textContent = findStandardDeviation(inputData).toPrecision(4);
 }
 
 //'https://api.jsonbin.io/b/60cd063f8ea8ec25bd107032'
